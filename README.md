@@ -195,6 +195,10 @@ npm run dev
 # digunakan untuk mengeksekusi eslint yang akan memeriksa baris kode javascript
 npm run lint
 
-# digunakan untuk mengeksekusi mocha yang akan memerika hasil kode yang diuji
+# digunakan untuk mengeksekusi mocha yang akan menguji kode yang berformat .test.js dan melihat hasil kode yang diuji
 npm run test
 ```
+
+## Deployment
+* `bahawan-hub` di deploy ke layanan railway [Coming Soon](#)
+* `database mongoDB` telah tersedia di cloud dengan menggunakan layanan Mongo Atlas
