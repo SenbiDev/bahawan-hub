@@ -44,4 +44,30 @@ module.exports = {
   secretkey: process.env.SECRET_KEY,
 };
 ```
+* `/app/user/model.js` berisikan skema database menggunakan skema mongoose untuk entitas user
+* `/app/auth` berisikan rute dan handler yang berhubungan dengan otentikasi
+* `/app/category` berisikan model, rute dan handler yang berhubungan akses tulis baca categori
+* `/app/ticket` berisikan model, rute dan handler yang berhubungan akses tulis baca tiket
 
+### `/constant`
+Terdapat satu file yang digunakan untuk menentukan status tiket yang akan keluar berdasarkan `query param status` yang terdapat pada url
+* `/constant/index.js`
+```graphql
+const ticketStatus = {
+  1: 'menunggu tindakan',
+  2: 'sedang dalam proses',
+  3: 'sedang direspon',
+  4: 'telah selesai',
+};
+```
+
+### `/database`
+Konfigurasi database di letakkan dalam file yang terdapat dalam folder ini
+* `/database/index.js`
+```graphql
+mongoose.connect(mongoUrl);
+const db = mongoose.connection;
+```
+
+### `/middlewares`
+Terdapat dua fungsi penting yaitu ```graphql decodeToken()``` dan ```graphql police_check()```
