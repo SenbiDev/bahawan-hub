@@ -23,3 +23,7 @@ Beberapa fitur yang di terapkan:
 * Linter menggunakan Eslint dengan style Airbnb
 * Test dengan Mocha & Chai Library
 * Test menggunakan Postman
+
+## Struktur Folder
+Folder inti dalam project ini adalah `/app`. Folder ini berisi semua program yang dapat dieksekusi atau dalam hal ini layanan sistem tiket.
+
