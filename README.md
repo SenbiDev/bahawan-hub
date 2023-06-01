@@ -25,5 +25,13 @@ Beberapa fitur yang di terapkan:
 * Test menggunakan Postman
 
 ## Struktur Folder
+Terdapat beberapa folder inti dalam project ini:
+* `/app`
+* `/constant`
+* `/database`
+* `/middlewares`
+* `/utils`
+
+### `/app`
 Folder inti dalam project ini adalah `/app`. Folder ini berisi semua program yang dapat dieksekusi atau dalam hal ini layanan sistem tiket.
 
