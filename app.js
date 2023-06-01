@@ -27,12 +27,14 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(decodeToken());
 
-app.delete('/testing/delete-all-collection', async () => {
+app.delete('/testing/delete-all-collection', async (req, res) => {
   const { collections } = db;
 
   await Promise.all(Object.values(collections).map(async (collection) => {
     await collection.deleteMany({});
   }));
+
+  res.status(200).json({ message: 'All collection deleted' });
 });
 app.use('/auth', authRoute);
 app.use('/api', ticketRoute);
