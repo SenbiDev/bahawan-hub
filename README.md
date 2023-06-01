@@ -9,3 +9,17 @@ Adapun beberapa teknologi utama yang digunakan dalam mengembangkan project ini:
 * ExpressJs
 * MongoDB
 * Mongoose
+
+## Fitur
+Beberapa fitur yang di terapkan:
+* Search
+* Filter berdasarkan nomor kategori, prioritas & status
+* Pagination
+* Logger menggunakan Morgan Library
+* Otentikasi menggunakan JWT
+* Otorisasi berdasarkan role menggunakan Casl Library
+* Validasi Payload
+* Validasi Token
+* Linter menggunakan Eslint dengan style Airbnb
+* Test dengan Mocha & Chai Library
+* Test menggunakan Postman
