@@ -158,3 +158,28 @@ Pastikan meng-clone project ini terlebih dahulu dengan menggunakan perintah `git
 ```graphql
 npm install
 ```
+
+## Konfigurasi Eslint
+Setiap perusahaan, team atau individu yang mengembangkan program tentu punya lint & code style beserta konfigurasi yang digunakan. Adapun konfigurasi eslint yang diterapkan
+```graphql
+{
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es2021": true,
+        "node": true
+    },
+    "extends": "airbnb-base",
+    "overrides": [
+    ],
+    "parserOptions": {
+        "ecmaVersion": "latest"
+    },
+    "rules": {
+        "no-use-before-define": "off",
+        "no-restricted-globals": "off",
+        "no-shadow": "off",
+        "no-underscore-dangle": "off"
+    }
+}
+```
