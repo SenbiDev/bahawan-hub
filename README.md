@@ -199,6 +199,9 @@ npm run lint
 npm run test
 ```
 
+## Endpoint
+Untuk melihat daftar enpoint serta cara penggunaan nya bisa diakses dengan mengunjungi [Dokumentasi API Bahawan Hub](https://www.postman.com/dark-equinox-980618/workspace/bahawan-hub/documentation/16994381-04b81ab5-4499-44d0-a4c0-e85eff08baac?entity=&branch=&version=). Untuk melakukan testing dengan postman dapat melihat `variable environment` serta dapat mengujinya melalui postman testing.
+
 ## Deployment
-* `bahawan-hub` di deploy ke layanan railway [Coming Soon](#)
+* `bahawan-hub` di deploy ke layanan [Railway](https://bahawan-hub-production.up.railway.app/)
 * `database mongoDB` telah tersedia di cloud dengan menggunakan layanan Mongo Atlas
