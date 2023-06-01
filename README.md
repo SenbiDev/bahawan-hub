@@ -35,7 +35,7 @@ Terdapat beberapa folder inti dalam project ini:
 ### `/app`
 Folder inti dalam project ini adalah `/app`. Folder ini berisi semua program yang dapat dieksekusi atau dalam hal ini layanan sistem tiket.
 * `/app/config` berisikan satu file untuk mengatur `environment variable` yang berhubungan dengan `jwt secret key` dan `database`
-```
+```graphql
 dotenv.config();
 module.exports = {
   rootPath: path.resolve(__dirname, '..'),
