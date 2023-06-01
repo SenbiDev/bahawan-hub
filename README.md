@@ -152,3 +152,9 @@ const policyFor = (user) => {
   return new Ability(builder.rules);
 };
 ```
+
+## Instalasi
+Pastikan meng-clone project ini terlebih dahulu dengan menggunakan perintah `git clone <url-project>`, kemudian lakukan instalasi menggunakan perintah
+```graphql
+npm install
+```
