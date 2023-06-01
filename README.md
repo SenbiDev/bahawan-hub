@@ -70,4 +70,59 @@ const db = mongoose.connection;
 ```
 
 ### `/middlewares`
-Terdapat dua fungsi penting yaitu ```graphql decodeToken()``` dan ```graphql police_check()```
+Terdapat dua fungsi penting dalam folder ini yaitu `decodeToken()` dan `police_check()`
+* fungsi `decodeToken()` digunakan untuk men-decode (mengurai) token lalu memverifikasi apakah `secret key` dalam token tersebut sesuai dengan pihak yang menghasilkan token
+```graphql
+function decodeToken() {
+  return async function (req, res, next) {
+    try {
+      const token = getToken(req);
+
+      if (!token) return next();
+
+      req.user = jwt.verify(token, config.secretkey);
+
+      const user = await User.findOne({ token: { $in: [token] } });
+
+      if (!user) {
+        return res
+          .status(500)
+          .json({
+            error: 500,
+            message: 'Token Expired',
+          });
+      }
+    } catch (err) {
+      if (err && err.name === 'JsonWebTokenError') {
+        return res
+          .status(500)
+          .json({
+            error: 500,
+            message: 'TokenMalformedError',
+            info: err.message,
+          });
+      }
+
+      next(err);
+    }
+
+    return next();
+  };
+}
+```
+* fungsi `police_check()` digunakan bersama dengan `express router` untuk memeriksa apakah user yang saat ini sedang login berhak untuk mengakses resource yang disediakan
+```graphql
+function police_check(action, subject) {
+  return function (req, res, next) {
+    const policy = policyFor(req.user);
+    if (!policy.can(action, subject)) {
+      return res.json({
+        error: 1,
+        message: `You are not allowed to ${action} ${subject}`,
+      });
+    }
+
+    next();
+  };
+}
+```
