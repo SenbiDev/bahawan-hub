@@ -145,7 +145,7 @@ describe('POST /auth/me', () => {
   it('should give an error message when the user is not logged in or the token has expired', (done) => {
     chai.request(app).get('/auth/me')
       .end((err, res) => {
-        console.log('ERRO ME', res.body);
+        console.log('ERROR ME', res.body);
         expect(res).to.have.status(401);
         expect(res.body).to.be.an('object');
         done();
