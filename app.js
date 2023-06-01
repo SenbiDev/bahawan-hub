@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const cors = require('cors');
 const { decodeToken } = require('./middlewares');
+const db = require('./database');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
@@ -26,6 +27,13 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(decodeToken());
 
+app.delete('/testing/delete-all-collection', async () => {
+  const { collections } = db;
+
+  await Promise.all(Object.values(collections).map(async (collection) => {
+    await collection.deleteMany({});
+  }));
+});
 app.use('/auth', authRoute);
 app.use('/api', ticketRoute);
 app.use('/api', categoryRoute);
