@@ -183,3 +183,18 @@ Setiap perusahaan, team atau individu yang mengembangkan program tentu punya lin
     }
 }
 ```
+
+## Perintah Eksekusi
+```graphql
+# digunakan untuk mengeksekusi layanan sistem tiket pada lingkungan production
+npm run start
+
+# digunakan untuk mengeksekusi layanan sistem tiket pada lingkungan development
+npm run dev
+
+# digunakan untuk mengeksekusi eslint yang akan memeriksa baris kode javascript
+npm run lint
+
+# digunakan untuk mengeksekusi mocha yang akan memerika hasil kode yang diuji
+npm run test
+```
